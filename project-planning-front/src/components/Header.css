@@ -20,3 +20,19 @@
 .ong-info {
   font-size: 1rem;
 }
+
+.btn-login {
+  background: white;
+  color: var(--primary);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background: var(--primary-light);
+  color: white;
+}
+

@@ -1,12 +1,17 @@
 import "./Header.css";
 
-export default function Header() {
+export default function Header({ isLoggedIn, onLogin }) {
   return (
     <header className="header">
       <div className="logo">ProjectPlanning</div>
       <div className="ong-info">
-        {/* En el futuro: foto y nombre de ONG */}
-        ONG Activa
+        {isLoggedIn ? (
+          "ONG Activa"
+        ) : (
+          <button className="btn-login" onClick={onLogin}>
+            Iniciar Sesión
+          </button>
+        )}
       </div>
     </header>
   );

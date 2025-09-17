@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProjectForm from "./pages/ProjectForm";
 import StagesForm from "./pages/StagesForm";
+import LandingPage from "./pages/LandingPage";
 import Header from "./components/Header";
 import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [projectData, setProjectData] = useState({
     nombre: "",
     fechaInicio: "",
@@ -15,9 +17,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header isLoggedIn={isLoggedIn} onLogin={() => setIsLoggedIn(true)} />
       <div className="container">
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route
             path="/proyecto"
             element={
